@@ -69,6 +69,8 @@ Step 8 - Then go to storage disks > Select you disk and click on eraser button t
 
 Some steps are left I will update soon when I get some time
 
+Need some improvements in this project I will startv working soon
+
 
 
 
