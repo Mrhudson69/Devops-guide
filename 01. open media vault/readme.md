@@ -1,83 +1,65 @@
-# openmediavault
-How to setup openmedia vault proxmox step by step guide and creating a shared folder
+# Setting Up OpenMediaVault on Proxmox - Step by Step Guide
 
-Step 1 - First headover to your proxmox server and login with root and download
+Follow these steps to set up OpenMediaVault on Proxmox:
 
-Step 2 - Go to website download stable build according to you need - https://www.openmediavault.org/?page_id=77
+## Step 1: Download OpenMediaVault
 
-Step 3 - Upload it to your proxmox server and create VM , after creation strat the VM
+1. Head over to your Proxmox server and log in with root.
+2. Download the stable build from the official website: [OpenMediaVault Download](https://www.openmediavault.org/?page_id=77).
 
-Step 4 - Once the VM/the machine has been powered on with the bootable media, install
+## Step 2: Create a VM in Proxmox
 
-Step 5 - Select the preferred language.
+1. Upload the downloaded OpenMediaVault ISO to your Proxmox server.
+2. Create a VM, and after creation, start the VM.
 
-Step 6 - Select your location.
+## Step 3: Install OpenMediaVault
 
-Step 7 - Set the locales
+1. Once the VM is powered on with the bootable media, proceed with the installation steps:
 
-Step 8 - Set the preferred keyboard layout.
+   - Select the preferred language.
+   - Select your location.
+   - Set the locales.
+   - Set the preferred keyboard layout.
 
-Step 9 - The installer will load packages from the media.
+2. Provide the hostname of the server (default will work fine).
+3. Set the domain name (use "local" if you don't have a domain).
+4. Set the root password (for shell login, not the web interface).
+5. Partition the disk and select the disk to be partitioned.
+6. The installation will start.
 
-Step 10 - Provide the hostname of the server. (By Default will work fine)
+## Step 4: Configure Package Manager
 
-Step 11 - Set the domain name. (If you have a domain name set it up else local will work fine)
+1. Set the package manager location.
+2. Set the mirror server (you can select deb.debian.org).
+3. If using an HTTP proxy, provide the details; otherwise, proceed.
 
-Step 12 - Set the root password. This password is for the shell login and not for the web interface.
+## Step 5: Reboot and Login
 
-Step 13 - Partition the disk.
+1. Reboot the system.
+2. Eject the installation media.
+3. Login using the created root user credentials.
+4. Obtain the machine's IP address by typing `ipconfig`.
 
-Step 14 - Select the disk to be partitioned.
+## Configure OpenMediaVault NAS Storage Server
 
-Step 15 - The installation will then start as shown below.
+1. Access the OpenMediaVault web interface: http://IP_Address/
+2. Default credentials are `admin` and `openmediavault`.
+3. On successful login, you will see the dashboard.
 
-Step 16 - Next, set where you want the package manager to fetch packages. Remember to set a location near you.
+## Step 6: Change Admin Password
 
-Step 17 - Proceed and set the mirror server. (You can select deb.debian.org)
+1. Change the default admin password: navigate to General Settings -> Web Administrator Password.
 
-Step 18 - If you are using an HTTP proxy to access the internet, you need to provide the details. Otherwise, proceed by hitting Enter
+## Step 7: Enable FTP and SMB/CIFS
 
-Step 19 - Packages will be downloaded (If its failed it means you setup DNS incorrect cross-verify)
+1. Enable FTP: navigate to Services > FTP and enable by checking the box.
+2. Enable SMB/CIFS: same procedure, navigate to Services > SMB / CIFS and enable.
 
-Step 20 - Once complete, you need to reboot the system.
+## Step 8: Create Data Storage Volume
 
-Step 21 - Remember to eject the installation media to avoid booting into it again. The system will boot as below.
+1. Mount a hard disk on your Proxmox machine via the Proxmox dashboard.
+   ![Mount Disk](https://github.com/Mrhudson69/openmediavault/assets/78916631/616fa697-c2e3-4b42-b4de-3c2e65664da6)
+2. Go to Storage Disks, select your disk, and click on the eraser button to wipe the data.
+   ![Wipe Data](https://github.com/Mrhudson69/openmediavault/assets/78916631/8650a307-8207-4159-81bc-5eade00cbe53)
 
-Step 22 - Login using the created root user credentials.
-
-Step 23 - Obtain the IP address of the machine by typing **ipconfig**
-
-**Configure OpenMediaVault NAS Storage Server**
-
-Step 1 - Once installed using any of the above methods, access the OpenMediaVault web interface using the URL http://IP_Address/
-
-Step 2 - Default credentials are **admin** and **openmediavault**
-
-Step 3 - On successful login, you will be granted the dashboard.
-
-Step 4 - Now we need to make several configurations on the OpenMediaVault NAS Storage Server. First, change the default admin password by navigating to General Settings ->Web Administrator Password
-
-Step 5 - Enable FTP on OpenMediaVault by navigating to Services > FTP and enable by checking the box
-
-Step 6 - Enable SMB / CIFS just with the same procedure; Services > SMB / CIFS and enable.You also need to save the changes made and apply them.
-
-Step 7 - Create the data storage volume : First mount a hard disk on your proxmox machine via proxmox dashboard according to you need
-![image](https://github.com/Mrhudson69/openmediavault/assets/78916631/616fa697-c2e3-4b42-b4de-3c2e65664da6)
-
-Step 8 - Then go to storage disks > Select you disk and click on eraser button to wipe the data of it.
-![image](https://github.com/Mrhudson69/openmediavault/assets/78916631/8650a307-8207-4159-81bc-5eade00cbe53)
-
-Some steps are left I will update soon when I get some time
-
-
-
-
-
-
-
-
-
-
-
-
-
+That's it! You have successfully set up OpenMediaVault on your Proxmox machine.

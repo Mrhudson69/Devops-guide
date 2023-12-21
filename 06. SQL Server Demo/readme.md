@@ -1,56 +1,66 @@
+# Setting Up SQL Server 2022 on Ubuntu
 
-# sql-server-ubuntu
-Setting up SQL server 2022 on ubuntu
+Follow these commands to set up SQL Server 2022 on Ubuntu:
 
-## RUn the below commands 
+1. **Add Microsoft SQL Server repository:**
+   ```bash
+   sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2022.list)"
+   ```
+   This command adds the Microsoft SQL Server repository to your system.
 
-```
-sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2022.list)" 
+2. **Install software-properties-common:**
+   ```bash
+   sudo apt install software-properties-common
+   ```
+   Ensure that the required software properties are installed.
 
-sudo apt install software-properties-common
+3. **Download Microsoft GPG key:**
+   ```bash
+   wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+   ```
+   Download and add the Microsoft GPG key to the trusted keys.
 
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+4. **Update package repositories:**
+   ```bash
+   sudo apt update
+   ```
+   Update the package repositories with the new SQL Server repository.
 
-sudo apt update
+5. **Install SQL Server:**
+   ```bash
+   sudo apt-get install mssql-server
+   ```
+   Install Microsoft SQL Server on your Ubuntu machine.
 
-sudo apt-get install mssql-server
+6. **Run SQL Server setup:**
+   ```bash
+   sudo /opt/mssql/bin/mssql-conf setup
+   ```
+   Follow the setup process. For the developer edition, generate a strong password from a password generator (e.g., passbolt) for the 'sa' user.
 
-sudo /opt/mssql/bin/mssql-conf setup
-```
+## Firewall Setup
 
-2 For developer edition (After selecting dev edition it will ask for pwd generate that pwd from passbolt(Any password generator app password must be strong and keep it somewhere safe) that password we will going to use to connect the database the default username/login will be sa)
+Configure the firewall to allow necessary ports:
 
-
-## Also setup firwall
-
-```
+```bash
 ufw enable
-
 ufw allow 22
-
 ufw allow 1433
-
 ufw status
 ```
+Enable the firewall, allow SSH (port 22), and allow SQL Server port (1433).
 
-## create user for ssh and logins
+## Create User for SSH and Logins
 
-```
+Create a new user for SSH and logins:
+
+```bash
 useradd rohan_sirohi
-
-<put your pwd>
-
-<reagain type your pwd>
-
-usermod -aG sudo rohan_sirohi (this command will add user in sudo be carefull before using this command)
+passwd rohan_sirohi
+usermod -aG sudo rohan_sirohi
 ```
+Replace 'rohan_sirohi' with your desired username. This command creates a new user, sets the password, and adds the user to the sudo group.
 
-### Try accessing the database from Server management studio or data azure studio default username will be sa
+### Accessing the Database
 
-
-
-
-
-
-
-
+Try accessing the database from Server Management Studio or Azure Data Studio using the default username 'sa.' Use the generated strong password for authentication.
