@@ -1,40 +1,49 @@
-# mysql-workbench
-In this guide I will show you how to install mysql-workbench in ubuntu 22.04
+# Installing MySQL Workbench on Ubuntu 22.04
 
-**In order to install mysql-workbench first you need to install mysql server**
+To install MySQL Workbench on Ubuntu 22.04, first, you need to install the MySQL server. Follow these steps:
 
-## First install mysql server
+## Install MySQL Server
 
-```
+```bash
 sudo apt update
 sudo apt install mysql-server
 sudo systemctl start mysql.service
 ```
 
-## Now Install Mysql-workbench
+This set of commands updates the package repositories, installs the MySQL server, and starts the MySQL service.
 
-Download package file from - https://dev.mysql.com/downloads/repo/apt/ (You can download it using wget)
+## Install MySQL Workbench
 
-```
-sudo apt install wget
-wget https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
-sudo apt install ./mysql-apt-config_0.8.28-1_all.deb
-```
-A pop-up window appears asking which MySQL product to install. As the required product is preselected, scroll down to Ok and hit Enter to continue installing.
+1. **Install wget (if not already installed):**
+   ```bash
+   sudo apt install wget
+   ```
+   Install wget, a tool for downloading files from the internet.
 
-![image](https://github.com/Mrhudson69/mysql-workbench/assets/78916631/21454b4a-7694-47e3-b884-6494874629c0)
+2. **Download the MySQL APT configuration file:**
+   ```bash
+   wget https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
+   ```
+   Download the MySQL APT configuration file.
 
-Wait for the installation to complete.
+3. **Install the MySQL APT configuration file:**
+   ```bash
+   sudo apt install ./mysql-apt-config_0.8.28-1_all.deb
+   ```
+   This command installs the MySQL APT configuration file. A pop-up window will appear asking which MySQL product to install; select the required product, scroll down to 'Ok,' and hit Enter to continue.
 
-![image](https://github.com/Mrhudson69/mysql-workbench/assets/78916631/d3b0e6e4-269d-4386-8e91-9c951f81085e)
+![MySQL APT Configuration](https://github.com/Mrhudson69/mysql-workbench/assets/78916631/21454b4a-7694-47e3-b884-6494874629c0)
 
-Then, update the apt cache to add the new repository source:
-```
+Wait for the installation to complete, then update the apt cache:
+
+```bash
 sudo apt update
 ```
-Finally, install MySQL Workbench by running:
-```
+
+Finally, install MySQL Workbench:
+
+```bash
 sudo apt install mysql-workbench-community
 ```
 
-Done That's all for installing mysql-workbench
+This completes the installation of MySQL Workbench on your Ubuntu 22.04 system. You can now use MySQL Workbench to manage your MySQL databases.
