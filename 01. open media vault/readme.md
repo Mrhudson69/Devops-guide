@@ -62,4 +62,17 @@ Follow these steps to set up OpenMediaVault on Proxmox:
 2. Go to Storage Disks, select your disk, and click on the eraser button to wipe the data.
    ![Wipe Data](https://github.com/Mrhudson69/openmediavault/assets/78916631/8650a307-8207-4159-81bc-5eade00cbe53)
 
-That's it! You have successfully set up OpenMediaVault on your Proxmox machine.
+Some steps are left I will update soon when I get some time
+
+
+
+
+
+
+
+
+
+
+
+
+
