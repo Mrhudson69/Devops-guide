@@ -1,4 +1,4 @@
-Here's the revised table with the full forms added:
+
 
 | Protocol | Port Number | Full Form                           |
 |----------|-------------|-------------------------------------|
@@ -16,7 +16,6 @@ Here's the revised table with the full forms added:
 | SNMP     | 161 (UDP) (SNMP) <br> 162 (UDP) (SNMP traps) | Simple Network Management Protocol |
 | NTP      | 123 (UDP)   | Network Time Protocol               |
 
-Thank you for pointing that out!
 
 ### DHCP (Dynamic Host Configuration Protocol)
 
