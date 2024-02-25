@@ -1,19 +1,22 @@
-| Protocol | Port Number |
-|----------|-------------|
-| DNS      | 53 (UDP/TCP)|
-| DHCP     | 67 (UDP, server) <br> 68 (UDP, client) |
-| SSH      | 22 (TCP)    |
-| FTP      | 20 (TCP, data transfer) <br> 21 (TCP, control) |
-| Telnet   | 23 (TCP)    |
-| SMTP     | 25 (TCP)    |
-| TFTP     | 69 (UDP)    |
-| HTTP     | 80 (TCP)    |
-| HTTPS    | 443 (TCP)   |
-| POP3     | 110 (TCP)   |
-| IMAP4    | 143 (TCP)   |
-| SNMP     | 161 (UDP) (SNMP) <br> 162 (UDP) (SNMP traps) |
-| NTP      | 123 (UDP)   |
+Here's the revised table with the full forms added:
 
+| Protocol | Port Number | Full Form                           |
+|----------|-------------|-------------------------------------|
+| DNS      | 53 (UDP/TCP)| Domain Name System                  |
+| DHCP     | 67 (UDP, server) <br> 68 (UDP, client) | Dynamic Host Configuration Protocol |
+| SSH      | 22 (TCP)    | Secure Shell                        |
+| FTP      | 20 (TCP, data transfer) <br> 21 (TCP, control) | File Transfer Protocol              |
+| Telnet   | 23 (TCP)    | Telecommunication Network            |
+| SMTP     | 25 (TCP)    | Simple Mail Transfer Protocol       |
+| TFTP     | 69 (UDP)    | Trivial File Transfer Protocol      |
+| HTTP     | 80 (TCP)    | Hypertext Transfer Protocol         |
+| HTTPS    | 443 (TCP)   | Hypertext Transfer Protocol Secure  |
+| POP3     | 110 (TCP)   | Post Office Protocol version 3      |
+| IMAP4    | 143 (TCP)   | Internet Message Access Protocol    |
+| SNMP     | 161 (UDP) (SNMP) <br> 162 (UDP) (SNMP traps) | Simple Network Management Protocol |
+| NTP      | 123 (UDP)   | Network Time Protocol               |
+
+Thank you for pointing that out!
 
 ### DHCP (Dynamic Host Configuration Protocol)
 
