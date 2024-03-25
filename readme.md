@@ -1512,9 +1512,83 @@ docker logs coolr-reporting
 
 10. Test the internal reporting site in a browser using the URL with port.
 
-```
+```bash
 http://192.168.61.112:3080/
 ```
 
 ![Screenshot](clipboard-202402161334-xrrgy.png)
+
+
+# How to Create User Access on the GOCD Dashboard for a Specific Project
+
+### Overview
+This guide provides step-by-step instructions on how to create user access on the GOCD dashboard for a specific project.
+
+### Steps
+
+**Step 1:**  
+Login to the GOCD server.
+
+**Step 2:**  
+Navigate to the configuration directory of GOCD server:
 ```
+C:\Program Files (x86)\Go Server\config
+```
+
+**Step 3:**  
+Edit the configuration file named `cruise-config.xml`.
+
+**Step 4:**  
+Add the desired user(s) to the configuration. For example:
+```
+<server id="media-man" ip="127.0.0.1" hostname="localhost">
+  <filesystem/>
+  <security>
+    <passwordFile path="C:\Program Files (x86)\Go Server\Users\media-man.txt"/>
+  </security>
+</server>
+<server id="pcx" ip="127.0.0.1" hostname="localhost">
+  <filesystem/>
+  <security>
+    <passwordFile path="C:\Program Files (x86)\Go Server\Users\pcx.txt"/>
+  </security>
+</server>
+```
+
+**Step 5:**  
+Restart the Go-server service.
+
+**Step 6:**  
+Go to [htpasswd-generator](https://hostingcanada.org/htpasswd-generator/) for password generation.
+
+**Step 7:**  
+Generate a password for the same username used for login, select bcrypt, and download the file.
+
+**Step 8:**  
+Navigate back to the server directory:
+```
+C:\Program Files (x86)\Go Server\Users
+```
+
+**Step 9:**  
+Create a new text file and paste the generated password value into it. Save and exit.
+
+**Step 10:**  
+Access the GOCD dashboard: `http://<GOCD_SERVER_IP>:<PORT>/go/admin/security/auth_configs`
+
+**Step 11:**  
+Navigate to the authentication configuration.
+
+**Step 12:**  
+Click on "Add" to create a new authentication configuration.
+
+**Step 13:**  
+Fill in the details as shown below:
+```
+Name: <Auth_Config_Name>
+Plugin ID: Password File
+Options: Path=<Path_to_password_file_created>
+```
+
+**Step 14:**  
+Done! Test the credentials by logging in incognito mode.
