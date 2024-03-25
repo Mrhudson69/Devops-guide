@@ -1,12 +1,5 @@
 
-
-
-
-
-
-
-
-
+[Setting Up OpenMediaVault on Proxmox - Step by Step Guide](# Setting Up OpenMediaVault on Proxmox - Step by Step Guide)
 
 
 
