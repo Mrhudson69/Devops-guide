@@ -43,3 +43,4 @@ wget https://git.io/wireguard -O wireguard-install.sh && bash wireguard-install.
 ![Empy_tunnel_wieguard](image-1.png)
 16. Name it something to remember and paste that content inside this
 ![Add_new_tunnel](image-2.png)
+That's all need to do now you can connect this
