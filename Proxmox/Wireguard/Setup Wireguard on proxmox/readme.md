@@ -37,11 +37,16 @@ wget https://git.io/wireguard -O wireguard-install.sh && bash wireguard-install.
 11. Confrim client name :
 12. It will generate token Screenshot that token and use it to setup in your mobile phone (PC does not support bar code scanning)
 13. To enroll pc you need to see config file that is generated during the setup : cat /root/<your client name>.conf and copy the content of the file
+
 ![Wiregurad_config_file](image.png)
+
 14. To connect with PC you need to download wireguard client 
 15. Open Wireguard Client and Click on Add Tunnel >> Create Empty tunnel
+
 ![Empy_tunnel_wieguard](image-1.png)
+
 16. Name it something to remember and paste that content inside this
 
 ![Add_new_tunnel](image-2.png)
+
 That's all need to do now you can connect this
