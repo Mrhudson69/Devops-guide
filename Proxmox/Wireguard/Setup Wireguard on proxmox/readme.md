@@ -41,5 +41,5 @@ wget https://git.io/wireguard -O wireguard-install.sh && bash wireguard-install.
 14. To connect with PC you need to download wireguard client 
 15. Open Wireguard Client and Click on Add Tunnel >> Create Empty tunnel
 ![Empy_tunnel_wieguard](image-1.png)
-16. Name it something to remember and paste that content inside this 
+16. Name it something to remember and paste that content inside this
 ![Add_new_tunnel](image-2.png)
